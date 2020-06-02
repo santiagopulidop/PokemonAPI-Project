@@ -1,32 +1,47 @@
 import React, { Component } from 'react';
 import Title from '../pokemons/title'
 import Search from '../pokemons/searchBar'
+import MainInfo from './mainInfo'
+
 
 class Home extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-            results : undefined
+            resluts :'',
+            loading: true
          }
     }
 
 componentDidMount =() =>{
-    fetch('http://pokeapi.salestock.net/api/v2/pokemon/')
+    fetch('https://pokeapi.co/api/v2/pokemon?limit=25')
     .then(response => response.json())
     .then(data =>{
-        console.log(data)
+       
         this.setState({
-            results : data.results
+            results : data.results,
+            loading: false
+
         })
+        
+        
     })
 }
     render() { 
-        return ( 
-            <>
-                <Title/>
-                <Search/>
-            </>
-         );
+        
+        if(this.state.loading===false){
+
+            return ( 
+                <>
+                    <Title/>
+                    <Search/>
+                    <MainInfo />
+                </>
+             );
+        }
+        return(
+            <div>Loading...</div>
+        )
     }
 }
  
