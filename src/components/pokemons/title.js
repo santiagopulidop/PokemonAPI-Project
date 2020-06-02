@@ -7,7 +7,7 @@ class Title extends Component {
     }
     render() { 
         return (  
-            <h1>Simple Pokedex</h1>
+            <h1 className='text-center'>Simple Pokedex</h1>
         );
     }
 }

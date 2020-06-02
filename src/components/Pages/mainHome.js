@@ -11,7 +11,7 @@ class Home extends Component {
     }
 
 componentDidMount =() =>{
-    fetch('http://pokeapi.salestock.net/api/v2/pokemon')
+    fetch('http://pokeapi.salestock.net/api/v2/pokemon/')
     .then(response => response.json())
     .then(data =>{
         console.log(data)
