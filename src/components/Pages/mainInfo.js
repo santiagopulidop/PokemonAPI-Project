@@ -17,6 +17,7 @@ class MainInfo extends Component {
       //url is get on results, it contains the url to be
       //query at nextQuery to get more info about the pokemon selected
       url: "",
+      loading: true,
     };
     console.log(props);
   }
@@ -34,21 +35,25 @@ class MainInfo extends Component {
         this.setState({
           results: data.results,
           url: data.results[this.state.id].url,
+          loading: false,
         });
       });
   };
 
   render() {
-    let { name } = this.state;
-    return (
-      <div>
-        <Name name={name} />
-        <Features url={this.state.url} />
-        <Link to="/">
-          <button>Back</button>
-        </Link>
-      </div>
-    );
+    let { name, url, loading } = this.state;
+    if (!loading) {
+      return (
+        <div>
+          <Name name={name} />
+          <Features url={url} />
+          <Link to="/">
+            <button>Back</button>
+          </Link>
+        </div>
+      );
+    }
+    return <div>Loading...</div>;
   }
 }
 

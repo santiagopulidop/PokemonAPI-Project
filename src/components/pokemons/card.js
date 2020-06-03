@@ -11,7 +11,9 @@ const Card = ({ name, id, imgUrl }) => {
           alt="..."
         />
         <div className="card-body text-center">
-          <p className="card-text">{name[0].toUpperCase() + name.slice(1)}</p>
+          <p className="card-text" id="text">
+            {name[0].toUpperCase() + name.slice(1)}
+          </p>
         </div>
       </div>
     </Link>

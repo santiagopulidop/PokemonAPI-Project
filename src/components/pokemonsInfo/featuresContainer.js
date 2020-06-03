@@ -4,14 +4,14 @@ class Features extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      url: "",
+      url: 0,
     };
   }
 
   componentDidMount = () => {
     let { url } = this.props;
     this.setState({
-      url: url,
+      url: this.props.url,
     });
     console.log(this.props.url);
   };
