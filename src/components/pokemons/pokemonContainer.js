@@ -15,9 +15,12 @@ class PokemonContainer extends Component {
   render() {
     const { pokemons } = this.state;
     return (
-      <div className="row p-3">
-        {console.log(pokemons[0].name)}
-        <Card imgUrl="" name="Doraemon" />
+      <div className="row p-3 d-flex justify-content-around">
+        {pokemons.map((value, index) => {
+          return (
+            <Card id={index} key={index} imgUrl={value.url} name={value.name} />
+          );
+        })}
       </div>
     );
   }

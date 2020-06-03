@@ -7,11 +7,7 @@ class Name extends Component {
   }
 
   render() {
-    return (
-      <h3 id={this.props.id} onClick={this.props.scnd}>
-        {this.props.nombre}
-      </h3>
-    );
+    return <h3></h3>;
   }
 }
 

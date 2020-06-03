@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Title from "../pokemons/title";
 import Search from "../pokemons/searchBar";
-import MainInfo from "./mainInfo";
+import PokemonContainer from "../pokemons/pokemonContainer";
 
 class Home extends Component {
   constructor(props) {
@@ -23,13 +23,13 @@ class Home extends Component {
       });
   };
   render() {
-    if (this.state.loading === false) {
+    if (!this.state.loading) {
       return (
-        <>
+        <div className="container-fluid">
           <Title />
           <Search />
-          <MainInfo data={this.state.results} />
-        </>
+          <PokemonContainer data={this.state.results} />
+        </div>
       );
     }
     return <div>Loading...</div>;
