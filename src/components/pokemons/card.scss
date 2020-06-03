@@ -1,0 +1,25 @@
+a {
+  text-decoration: none;
+  .card {
+    img {
+      padding: 2rem;
+      background-color: #cacaca;
+    }
+    .card-body {
+      color: black;
+      text-decoration: none;
+    }
+    &:hover {
+      transition: ease-out 0.1s;
+      transform: scale(1.03);
+      .card-body {
+        text-decoration: none;
+        color: white;
+        background-color: rgb(211, 60, 60);
+        #text {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

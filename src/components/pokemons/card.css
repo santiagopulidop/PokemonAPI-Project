@@ -1,0 +1,31 @@
+a {
+  text-decoration: none;
+}
+
+a .card img {
+  padding: 2rem;
+  background-color: #cacaca;
+}
+
+a .card .card-body {
+  color: black;
+  text-decoration: none;
+}
+
+a .card:hover {
+  -webkit-transition: ease-out 0.1s;
+  transition: ease-out 0.1s;
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
+}
+
+a .card:hover .card-body {
+  text-decoration: none;
+  color: white;
+  background-color: #d33c3c;
+}
+
+a .card:hover .card-body #text {
+  text-decoration: none;
+}
+/*# sourceMappingURL=card.css.map */

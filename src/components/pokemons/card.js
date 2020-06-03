@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Card = ({ name, id, imgUrl }) => {
   return (
-    <Link to={`/PokemonInfo/${id}${name}`}>
+    <Link to={`/PokemonInfo/${id}${name}`} style={{ textDecoration: "none" }}>
       <div className="card m-3" id={id} style={{ width: "18rem" }}>
         <img
           src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`}
