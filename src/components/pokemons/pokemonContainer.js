@@ -28,7 +28,7 @@ class PokemonContainer extends Component {
         <div className="row p-3 d-flex justify-content-around">
           {pokemons
             .filter((pokemon) => {
-              return pokemon.name.includes(input);
+              return pokemon.name.includes(input.toLowerCase());
             })
             .map((value, index) => {
               return (
