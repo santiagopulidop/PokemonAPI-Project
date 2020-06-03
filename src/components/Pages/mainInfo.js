@@ -28,22 +28,22 @@ class MainInfo extends Component {
       name: name,
     });
 
-    fetch("https://pokeapi.co/api/v2/pokemon?limit=25")
+    /* fetch("https://pokeapi.co/api/v2/pokemon?limit=25")
       .then((response) => response.json())
       .then((data) => {
         this.setState({
           results: data.results,
           url: data.results[this.state.id].url,
         });
-      });
+      }); */
   };
 
   render() {
-    let { name } = this.state;
+    let { name, id } = this.state;
     return (
       <div>
         <Name name={name} />
-        <Features url={this.state.url} />
+        <Features id={id} />
         <Link to="/">
           <button>Back</button>
         </Link>
