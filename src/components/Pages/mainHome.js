@@ -9,9 +9,9 @@ class Home extends Component {
     this.state = {
       results: "",
       loading: true,
+      searchInput: "",
     };
   }
-
   componentDidMount = () => {
     fetch("https://pokeapi.co/api/v2/pokemon?limit=25")
       .then((response) => response.json())
@@ -22,13 +22,19 @@ class Home extends Component {
         });
       });
   };
+  handleChange = (e) => {
+    this.setState({
+      searchInput: e.target.value,
+    });
+  };
   render() {
-    if (!this.state.loading) {
+    const { results, loading, searchInput } = this.state;
+    if (!loading) {
       return (
         <div className="container-fluid">
           <Title />
-          <Search />
-          <PokemonContainer data={this.state.results} />
+          <Search clickHandler={this.handleChange} />
+          <PokemonContainer data={results} input={searchInput} />
         </div>
       );
     }

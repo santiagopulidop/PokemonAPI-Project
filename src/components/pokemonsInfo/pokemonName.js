@@ -7,7 +7,7 @@ class Name extends Component {
   }
 
   render() {
-    return <h3></h3>;
+    return <h3>HOlaaaa</h3>;
   }
 }
 

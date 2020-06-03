@@ -6,6 +6,7 @@ class Search extends Component {
     this.state = {};
   }
   render() {
+    const { clickHandler } = this.props;
     return (
       <div className="px-4">
         <input
@@ -13,6 +14,7 @@ class Search extends Component {
           type="search"
           placeholder="Search for Pokémon"
           aria-label="Search"
+          onChange={clickHandler}
         />
         <button className="btn my-2 my-sm-0" type="button"></button>
       </div>
