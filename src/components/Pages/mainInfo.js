@@ -41,12 +41,12 @@ class MainInfo extends Component {
   };
 
   render() {
-    let { name, url, loading } = this.state;
+    let { name, url, loading, id } = this.state;
     if (!loading) {
       return (
         <div>
           <Name name={name} />
-          <Features url={url} />
+          <Features url={url} id={id} />
           <Link to="/">
             <button>Back</button>
           </Link>

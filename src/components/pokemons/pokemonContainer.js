@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Card from "./card";
-import "./card.css";
 
 class PokemonContainer extends Component {
   constructor(props) {

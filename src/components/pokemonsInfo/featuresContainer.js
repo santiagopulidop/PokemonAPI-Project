@@ -4,19 +4,39 @@ class Features extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      url: 0,
+      url: "",
+      id: "",
+      loading: true,
     };
   }
+  componentWillMount = () => {
+    this.setState({
+      url: `https://pokeapi.co/api/v2/pokemon/` + this.props.id,
+      id: this.props.id,
+    });
+  };
 
   componentDidMount = () => {
-    let { url } = this.props;
-    this.setState({
-      url: this.props.url,
-    });
-    console.log(this.props.url);
+    if (this.setState.url !== "") {
+      fetch(this.state.url)
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          this.setState({
+            loading: false,
+          });
+          console.log(data);
+        });
+    }
   };
+
   render() {
-    return <div>{this.props.url}</div>;
+    let { loading } = this.state;
+    if (!loading) {
+      return <div>{this.props.url}</div>;
+    }
+    return <div>Loading...</div>;
   }
 }
 
