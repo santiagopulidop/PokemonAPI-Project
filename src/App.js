@@ -16,7 +16,7 @@ class App extends React.Component {
           </Route>
           <Route
             exact
-            path="/PokemonInfo/:id"
+            path="/PokemonInfo/:id?:name"
             render={(props) => <MainInfo {...props.match.params} />}
           ></Route>
         </div>
