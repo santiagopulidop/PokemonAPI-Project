@@ -2,14 +2,53 @@ a {
   text-decoration: none;
 }
 
+a .card {
+  width: 15rem;
+}
+
 a .card img {
-  padding: 2rem;
-  background-color: #cacaca;
+  padding: 0 1rem;
+  background-color: #f0f0f0;
 }
 
 a .card .card-body {
   color: black;
   text-decoration: none;
+}
+
+a .card .card-body p {
+  margin: 0;
+}
+
+a .card .card-body .number {
+  color: #717171;
+  font-size: 0.9rem;
+  background-color: #cacaca;
+  position: absolute;
+  padding: 0 1rem;
+  top: 0;
+  right: 0;
+}
+
+a .card .card-body .types .item {
+  color: #b1b1b1;
+  padding: 0.1rem 0.5rem;
+  border: 1px solid #b1b1b1;
+  border-radius: 3px;
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+}
+
+a .card .card-body .evolves {
+  color: grey;
+  font-size: 0.9rem;
+  margin: 1rem 0;
+  padding-left: 0.5rem;
+  border-left: 3px solid #cacaca;
+}
+
+a .card .card-body .evolves p {
+  text-transform: capitalize;
 }
 
 a .card:hover {
@@ -19,13 +58,31 @@ a .card:hover {
           transform: scale(1.03);
 }
 
+a .card:hover img {
+  background-color: #cacaca;
+}
+
+a .card:hover .number {
+  background-color: #f0f0f0;
+}
+
 a .card:hover .card-body {
   text-decoration: none;
-  color: white;
-  background-color: #d33c3c;
+  color: #f0f0f0;
+  background-color: #ee1515;
 }
 
 a .card:hover .card-body #text {
   text-decoration: none;
+}
+
+a .card:hover .card-body .types .item {
+  color: #f0f0f0;
+  border-color: #f0f0f0;
+}
+
+a .card:hover .card-body .evolves {
+  color: #f0f0f0;
+  border-color: #f0f0f0;
 }
 /*# sourceMappingURL=card.css.map */

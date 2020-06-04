@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Title from "../pokemons/title";
 import Search from "../pokemons/searchBar";
 import PokemonContainer from "../pokemons/pokemonContainer";
+import "../pokemons/searchBar.css";
 
 class Home extends Component {
   constructor(props) {

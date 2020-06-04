@@ -24,35 +24,35 @@ class PokemonContainer extends Component {
   render() {
     const { pokemons, search } = this.state;
     const { input } = this.props;
+    //Si SEARCH es true imprime solo las CARD que incluyan el INPUT TEXT del SEARCH
     if (search) {
       return (
         <div className="row p-3 d-flex justify-content-around">
-          {pokemons
-            .filter((pokemon) => {
-              return pokemon.name.includes(input.toLowerCase());
-            })
-            .map((value, index) => {
+          {pokemons.map((pokemon, index) => {
+            if (pokemon.name.includes(input.toLowerCase()))
               return (
                 <Card
                   id={index + 1}
                   key={index}
-                  imgUrl={value.url}
-                  name={value.name}
+                  imgUrl={pokemon.url}
+                  name={pokemon.name}
                 />
               );
-            })}
+            return;
+          })}
         </div>
       );
     }
+    //Si NO imprime las 25 CARDS por defecto
     return (
       <div className="row p-3 d-flex justify-content-around">
-        {pokemons.map((value, index) => {
+        {pokemons.map((pokemon, index) => {
           return (
             <Card
               id={index + 1}
               key={index}
-              imgUrl={value.url}
-              name={value.name}
+              imgUrl={pokemon.url}
+              name={pokemon.name}
             />
           );
         })}

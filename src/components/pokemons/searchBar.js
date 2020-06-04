@@ -10,7 +10,8 @@ class Search extends Component {
     return (
       <div className="px-4">
         <input
-          className="form-control mr-sm-2"
+          id="search"
+          className="form-control mr-sm-2 search"
           type="search"
           placeholder="Search for Pokémon"
           aria-label="Search"
