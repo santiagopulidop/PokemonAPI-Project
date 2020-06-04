@@ -7,7 +7,7 @@ class Name extends Component {
   }
 
   render() {
-    return <h3 className="text-center">{this.props.name}</h3>;
+    return <h3 className="text-center pokemonName">{this.props.name}</h3>;
   }
 }
 

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Name from "../pokemonsInfo/pokemonName";
 import { Link, Router } from "react-router-dom";
 import Features from "../pokemonsInfo/featuresContainer";
+import "../pokemonsInfo/info.css";
 
 class MainInfo extends Component {
   constructor(props) {
@@ -44,11 +45,11 @@ class MainInfo extends Component {
     let { name, url, loading, id } = this.state;
     if (!loading) {
       return (
-        <div>
+        <div className="mainWrapper container-fluid">
           <Name name={name} />
           <Features url={url} id={id} />
           <Link to="/">
-            <button>Back</button>
+            <button className="m-2 getBack">Back</button>
           </Link>
         </div>
       );

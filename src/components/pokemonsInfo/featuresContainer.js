@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import ProfileTitle from "./profileTitle";
+import Stats from "./stats";
 
 class Features extends Component {
   constructor(props) {
@@ -6,12 +8,16 @@ class Features extends Component {
     this.state = {
       url: "",
       id: "",
+      info: "",
+      abillities: "",
+      weight: "",
+      height: "",
       loading: true,
     };
   }
   componentWillMount = () => {
     this.setState({
-      url: `https://pokeapi.co/api/v2/pokemon/` + this.props.id,
+      url: this.props.url,
       id: this.props.id,
     });
   };
@@ -25,16 +31,44 @@ class Features extends Component {
         .then((data) => {
           this.setState({
             loading: false,
+            info: data,
+            abilities: data.abilities,
+            weight: data.weight,
+            height: data.height,
           });
-          console.log(data);
         });
     }
   };
 
   render() {
-    let { loading } = this.state;
+    let { loading, info } = this.state;
     if (!loading) {
-      return <div>{this.props.url}</div>;
+      return (
+        <div className="container-fluid info">
+          <Stats info={info.stats} />
+          <div className="features mt-5 mb-4">
+            <ProfileTitle />
+            <div className="row pl-2">
+              <div className="col-lg-12">
+                <b>Abilities:</b>
+                {this.state.abilities.map((i, index) => {
+                  return (
+                    <span className="m-1" key={index}>
+                      {i.ability.name}
+                    </span>
+                  );
+                })}
+              </div>
+              <div className="col-lg-12">
+                <b>weight:</b> {this.state.weight}
+              </div>
+              <div className="col-lg-12">
+                <b>height:</b> {this.state.height}
+              </div>
+            </div>
+          </div>
+        </div>
+      );
     }
     return <div>Loading...</div>;
   }

@@ -1,0 +1,50 @@
+h3 {
+  margin: 0;
+}
+
+.mainWrapper {
+  width: 100vw;
+  max-width: 70%;
+  margin: auto;
+  border: 1px black solid;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 500px) {
+  .mainWrapper {
+    max-width: 90%;
+  }
+  .mainWrapper h3 {
+    font-size: 1.3rem;
+  }
+  .mainWrapper span,
+  .mainWrapper div {
+    font-size: 0.9rem;
+  }
+}
+
+.getBack {
+  position: absolute;
+  top: 0;
+}
+
+.features .profileTitle {
+  background-color: lightgreen;
+  border-radius: 5px;
+}
+
+.pokemonName {
+  background-color: lightgreen;
+  width: 50%;
+  margin: auto;
+}
+
+.stats .progress {
+  height: 20px;
+}
+
+.stats .progress .progress-bar {
+  background-color: green;
+  font-weight: bold;
+}
+/*# sourceMappingURL=info.css.map */
