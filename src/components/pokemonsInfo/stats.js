@@ -1,23 +1,32 @@
 import React, { Component } from "react";
-
+var urlImg =
+  "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/";
 class Stats extends Component {
   constructor(props) {
     super(props);
     this.state = {
       info: "",
+      id: "",
     };
   }
 
   componentWillMount() {
     this.setState({
       info: this.props.info,
+      id: this.props.id + 1,
     });
   }
   render() {
     return (
-      <div className="stats mt-4">
+      <div className="stats">
+        <div className="imgWrapper">
+          <img
+            className="pokemonImg"
+            src={urlImg + this.state.id + ".png"}
+            alt="img"
+          ></img>
+        </div>
         {this.state.info.map((i, index) => {
-          console.log(i.stat.name);
           return (
             <div className="row">
               <div className="col-lg-4 col-md-6">{i.stat.name}</div>

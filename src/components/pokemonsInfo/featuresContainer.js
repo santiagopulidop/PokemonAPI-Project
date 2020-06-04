@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ProfileTitle from "./profileTitle";
 import Stats from "./stats";
+import Evolution from "./evolution";
 
 class Features extends Component {
   constructor(props) {
@@ -41,11 +42,11 @@ class Features extends Component {
   };
 
   render() {
-    let { loading, info } = this.state;
+    let { loading, info, id } = this.state;
     if (!loading) {
       return (
         <div className="container-fluid info">
-          <Stats info={info.stats} />
+          <Stats info={info.stats} id={id} />
           <div className="features mt-5 mb-4">
             <ProfileTitle />
             <div className="row pl-2">
@@ -67,6 +68,7 @@ class Features extends Component {
               </div>
             </div>
           </div>
+          <Evolution id={this.state.id} />
         </div>
       );
     }

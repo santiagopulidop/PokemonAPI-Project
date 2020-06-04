@@ -5,13 +5,14 @@ h3 {
 .mainWrapper {
   width: 100vw;
   max-width: 70%;
-  margin: auto;
+  margin: 20px auto;
   border: 1px black solid;
   border-radius: 5px;
 }
 
 @media screen and (max-width: 500px) {
   .mainWrapper {
+    border: none;
     max-width: 90%;
   }
   .mainWrapper h3 {
@@ -21,22 +22,48 @@ h3 {
   .mainWrapper div {
     font-size: 0.9rem;
   }
+  .mainWrapper .getBack {
+    font-size: 2rem;
+    position: absolute;
+  }
+  .mainWrapper .getBack svg {
+    background-color: #f2f4f4;
+    border-radius: 50%;
+  }
 }
 
 .getBack {
-  position: absolute;
+  position: fixed;
   top: 0;
+  left: 0;
+  background: none;
+  border: none;
+  font-size: 3rem;
 }
 
-.features .profileTitle {
-  background-color: lightgreen;
+.getBack:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.getBack:hover svg {
+  background-color: #d5d8dc;
+  border-radius: 50%;
+}
+
+.features .profileTitle,
+.evolutionsTitle {
+  background-color: #ee1515;
   border-radius: 5px;
+  color: white;
 }
 
 .pokemonName {
-  background-color: lightgreen;
+  background-color: #ee1515;
   width: 50%;
   margin: auto;
+  border-radius: 5px;
+  color: white;
 }
 
 .stats .progress {
@@ -44,7 +71,15 @@ h3 {
 }
 
 .stats .progress .progress-bar {
-  background-color: green;
+  background-color: #ee1515;
   font-weight: bold;
+}
+
+.imgWrapper {
+  text-align: center;
+}
+
+.pokemonImg {
+  width: 30%;
 }
 /*# sourceMappingURL=info.css.map */
