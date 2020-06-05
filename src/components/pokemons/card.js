@@ -1,5 +1,6 @@
-import React, { Component } from "react";
+import React, { Component, Suspense } from "react";
 import { Link } from "react-router-dom";
+import Loader from "./loader";
 
 class Card extends Component {
   constructor(props) {
@@ -37,12 +38,7 @@ class Card extends Component {
     if (!loading) {
       return (
         <Link to={`/PokemonInfo/${id}`} style={{ textDecoration: "none" }}>
-          <div
-            className="card m-3"
-            id={id}
-            onClick={(e) => console.dir(e.currentTarget)}
-            title={imgUrl}
-          >
+          <div className="card m-3" id={id} title={imgUrl}>
             <img
               src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`}
               className="card-img-top"
@@ -67,13 +63,18 @@ class Card extends Component {
                   Evolves from
                   <p>{pokemonEvolves}</p>
                 </div>
-              ) : undefined}
+              ) : null}
             </div>
           </div>
         </Link>
       );
     }
-    return <div>loading...</div>;
+
+    return (
+      <div className="card m-3 col-2">
+        <Loader />
+      </div>
+    );
   }
 }
 

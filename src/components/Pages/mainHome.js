@@ -1,8 +1,9 @@
 import React, { Component } from "react";
+import Loader from "../pokemons/loader";
 import Title from "../pokemons/title";
 import Search from "../pokemons/searchBar";
 import PokemonContainer from "../pokemons/pokemonContainer";
-import "../pokemons/searchBar.css";
+import "../pokemons/styles/searchBar.css";
 
 class Home extends Component {
   constructor(props) {
@@ -39,7 +40,7 @@ class Home extends Component {
         </div>
       );
     }
-    return <div>Loading...</div>;
+    return null;
   }
 }
 

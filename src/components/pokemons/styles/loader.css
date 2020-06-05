@@ -1,0 +1,36 @@
+.loader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  width: 100%;
+  padding: 2rem;
+}
+
+.loader svg {
+  color: #cacaca;
+  font-size: 1rem;
+  -webkit-animation: rotate 0.5s infinite linear;
+          animation: rotate 0.5s infinite linear;
+}
+
+@-webkit-keyframes rotate {
+  to {
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
+  }
+}
+
+@keyframes rotate {
+  to {
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
+  }
+}
+/*# sourceMappingURL=loader.css.map */

@@ -1,0 +1,18 @@
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  padding: 2rem;
+  svg {
+    color: #cacaca;
+    font-size: 1rem;
+    animation: rotate 0.5s infinite linear;
+    @keyframes rotate {
+      to {
+        transform: rotate(359deg);
+      }
+    }
+  }
+}
