@@ -45,7 +45,7 @@ class Features extends Component {
     let { loading, info, id } = this.state;
     if (!loading) {
       return (
-        <div className="container-fluid info">
+        <div className="container info">
           <Stats info={info.stats} id={id} />
           <div className="features mt-5 mb-4">
             <ProfileTitle />
